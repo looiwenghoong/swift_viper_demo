@@ -16,6 +16,11 @@
 		F43186A327BF500200E7805E /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43186A227BF500200E7805E /* PostTableViewCell.xib */; };
 		F43186A527BF503300E7805E /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43186A427BF503300E7805E /* PostTableViewCell.swift */; };
 		F43186A927BF550200E7805E /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43186A827BF550200E7805E /* BaseTableViewCell.swift */; };
+		F43186AC27BF78EF00E7805E /* PostProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43186AB27BF78EF00E7805E /* PostProtocol.swift */; };
+		F43186AE27BF7E3A00E7805E /* PostRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43186AD27BF7E3A00E7805E /* PostRouter.swift */; };
+		F43186B027BFA25500E7805E /* PostPresentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43186AF27BFA25500E7805E /* PostPresentor.swift */; };
+		F43186B227BFA28D00E7805E /* PostInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43186B127BFA28D00E7805E /* PostInteractor.swift */; };
+		F43186B427BFA4E400E7805E /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43186B327BFA4E400E7805E /* PostModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +37,11 @@
 		F43186A227BF500200E7805E /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		F43186A427BF503300E7805E /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		F43186A827BF550200E7805E /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		F43186AB27BF78EF00E7805E /* PostProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProtocol.swift; sourceTree = "<group>"; };
+		F43186AD27BF7E3A00E7805E /* PostRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRouter.swift; sourceTree = "<group>"; };
+		F43186AF27BFA25500E7805E /* PostPresentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPresentor.swift; sourceTree = "<group>"; };
+		F43186B127BFA28D00E7805E /* PostInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInteractor.swift; sourceTree = "<group>"; };
+		F43186B327BFA4E400E7805E /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,10 +132,11 @@
 		F431869527BF3A7E00E7805E /* post-module */ = {
 			isa = PBXGroup;
 			children = (
+				F43186AA27BF78DE00E7805E /* protocols */,
 				F43186A027BF4FC600E7805E /* router */,
 				F431869F27BF4FBD00E7805E /* entity */,
 				F431869E27BF4FB400E7805E /* presentor */,
-				F431869D27BF4FAB00E7805E /* interceptor */,
+				F431869D27BF4FAB00E7805E /* interactor */,
 				F431869C27BF4F9500E7805E /* view */,
 				F431868227BF39D300E7805E /* PostViewController.swift */,
 			);
@@ -140,16 +151,18 @@
 			path = view;
 			sourceTree = "<group>";
 		};
-		F431869D27BF4FAB00E7805E /* interceptor */ = {
+		F431869D27BF4FAB00E7805E /* interactor */ = {
 			isa = PBXGroup;
 			children = (
+				F43186B127BFA28D00E7805E /* PostInteractor.swift */,
 			);
-			path = interceptor;
+			path = interactor;
 			sourceTree = "<group>";
 		};
 		F431869E27BF4FB400E7805E /* presentor */ = {
 			isa = PBXGroup;
 			children = (
+				F43186AF27BFA25500E7805E /* PostPresentor.swift */,
 			);
 			path = presentor;
 			sourceTree = "<group>";
@@ -157,6 +170,7 @@
 		F431869F27BF4FBD00E7805E /* entity */ = {
 			isa = PBXGroup;
 			children = (
+				F43186B327BFA4E400E7805E /* PostModel.swift */,
 			);
 			path = entity;
 			sourceTree = "<group>";
@@ -164,6 +178,7 @@
 		F43186A027BF4FC600E7805E /* router */ = {
 			isa = PBXGroup;
 			children = (
+				F43186AD27BF7E3A00E7805E /* PostRouter.swift */,
 			);
 			path = router;
 			sourceTree = "<group>";
@@ -191,6 +206,14 @@
 				F43186A827BF550200E7805E /* BaseTableViewCell.swift */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		F43186AA27BF78DE00E7805E /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F43186AB27BF78EF00E7805E /* PostProtocol.swift */,
+			);
+			path = protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,9 +332,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F43186B227BFA28D00E7805E /* PostInteractor.swift in Sources */,
+				F43186B427BFA4E400E7805E /* PostModel.swift in Sources */,
+				F43186AC27BF78EF00E7805E /* PostProtocol.swift in Sources */,
 				F43186A927BF550200E7805E /* BaseTableViewCell.swift in Sources */,
+				F43186B027BFA25500E7805E /* PostPresentor.swift in Sources */,
 				F431868327BF39D300E7805E /* PostViewController.swift in Sources */,
 				F431867F27BF39D300E7805E /* AppDelegate.swift in Sources */,
+				F43186AE27BF7E3A00E7805E /* PostRouter.swift in Sources */,
 				F43186A527BF503300E7805E /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

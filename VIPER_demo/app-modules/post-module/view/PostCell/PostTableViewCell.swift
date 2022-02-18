@@ -18,8 +18,9 @@ class PostTableViewCell: BaseTableViewCell {
     override func updateDisplay(object: AnyObject?, indexPath: IndexPath) {
         super.updateDisplay(object: object, indexPath: indexPath)
         
-        if let descriptionList = object as? [String] {
-            descriptionLabel.text = descriptionList[indexPath.row]
+        if let post = object as? [PostModel] {
+            titleLabel.text = post[indexPath.row].title
+            descriptionLabel.text = post[indexPath.row].body
         }
     }
     

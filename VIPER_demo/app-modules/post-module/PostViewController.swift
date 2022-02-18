@@ -9,15 +9,34 @@ import UIKit
 
 class PostViewController: UIViewController {
 
+    var presenter: ViewToPresentorPostProtocol?
+    var postList: [PostModel] = []
+    
     @IBOutlet weak var tableView: UITableView!
     
-    var postList: [String] = ["jakhdlkaj lsj jsaldjlkaj ldjalskjd lsajdlk jaslkjd", "Coepi aeternus acerbitas socius sequi autem contabesco conservo auxilium statua capillus votum suscipit admitto spero sint audentia.","Thesis aperte denuo. Thesis cilicium delectatio. Sed eos ut. Maiores quibusdam considero. Desparatus dolores dolore. Deporto curriculum adflicto. Venustas voluptatem utroque. Tricesimus sperno vaco"]
     override func viewDidLoad() {
         super.viewDidLoad()
+        PostRouter().createPostModule(controller: self)
+        presenter?.fetchPost()
         // Do any additional setup after loading the view.
         tableView.register(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "PostTableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
+    }
+}
+
+extension PostViewController: PresentorToViewPostProtocol {
+    func onPostResponseSuccess(postList: [PostModel]?) {
+        // response success
+        if let data = postList {
+            self.postList = data
+            self.tableView.reloadData()
+        }
+
+    }
+    
+    func onPostResponseFailure() {
+        // response failed
     }
 }
 
