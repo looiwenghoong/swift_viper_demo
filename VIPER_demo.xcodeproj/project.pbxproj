@@ -13,6 +13,9 @@
 		F431868827BF39D800E7805E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F431868727BF39D800E7805E /* Assets.xcassets */; };
 		F431868B27BF39D800E7805E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F431868927BF39D800E7805E /* LaunchScreen.storyboard */; };
 		F431869727BF430100E7805E /* Post.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F431869627BF430100E7805E /* Post.storyboard */; };
+		F43186A327BF500200E7805E /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43186A227BF500200E7805E /* PostTableViewCell.xib */; };
+		F43186A527BF503300E7805E /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43186A427BF503300E7805E /* PostTableViewCell.swift */; };
+		F43186A927BF550200E7805E /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43186A827BF550200E7805E /* BaseTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		F431868A27BF39D800E7805E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F431868C27BF39D800E7805E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F431869627BF430100E7805E /* Post.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Post.storyboard; sourceTree = "<group>"; };
+		F43186A227BF500200E7805E /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		F43186A427BF503300E7805E /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		F43186A827BF550200E7805E /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +52,6 @@
 				13DBB0285B2C3AAC23062760 /* Pods-VIPER_demo.debug.xcconfig */,
 				AD38AD08C1BE116380298841 /* Pods-VIPER_demo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -79,6 +84,7 @@
 		F431867D27BF39D300E7805E /* VIPER_demo */ = {
 			isa = PBXGroup;
 			children = (
+				F43186A627BF54EB00E7805E /* common-utils */,
 				F431869427BF3A4300E7805E /* app-settings */,
 				F431869327BF3A1900E7805E /* app-modules */,
 				F431869227BF3A0D00E7805E /* app-ui */,
@@ -116,9 +122,75 @@
 		F431869527BF3A7E00E7805E /* post-module */ = {
 			isa = PBXGroup;
 			children = (
+				F43186A027BF4FC600E7805E /* router */,
+				F431869F27BF4FBD00E7805E /* entity */,
+				F431869E27BF4FB400E7805E /* presentor */,
+				F431869D27BF4FAB00E7805E /* interceptor */,
+				F431869C27BF4F9500E7805E /* view */,
 				F431868227BF39D300E7805E /* PostViewController.swift */,
 			);
 			path = "post-module";
+			sourceTree = "<group>";
+		};
+		F431869C27BF4F9500E7805E /* view */ = {
+			isa = PBXGroup;
+			children = (
+				F43186A127BF4FE900E7805E /* PostCell */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		F431869D27BF4FAB00E7805E /* interceptor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = interceptor;
+			sourceTree = "<group>";
+		};
+		F431869E27BF4FB400E7805E /* presentor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = presentor;
+			sourceTree = "<group>";
+		};
+		F431869F27BF4FBD00E7805E /* entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = entity;
+			sourceTree = "<group>";
+		};
+		F43186A027BF4FC600E7805E /* router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		F43186A127BF4FE900E7805E /* PostCell */ = {
+			isa = PBXGroup;
+			children = (
+				F43186A227BF500200E7805E /* PostTableViewCell.xib */,
+				F43186A427BF503300E7805E /* PostTableViewCell.swift */,
+			);
+			path = PostCell;
+			sourceTree = "<group>";
+		};
+		F43186A627BF54EB00E7805E /* common-utils */ = {
+			isa = PBXGroup;
+			children = (
+				F43186A727BF54F400E7805E /* view */,
+			);
+			path = "common-utils";
+			sourceTree = "<group>";
+		};
+		F43186A727BF54F400E7805E /* view */ = {
+			isa = PBXGroup;
+			children = (
+				F43186A827BF550200E7805E /* BaseTableViewCell.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +256,7 @@
 				F431868B27BF39D800E7805E /* LaunchScreen.storyboard in Resources */,
 				F431869727BF430100E7805E /* Post.storyboard in Resources */,
 				F431868827BF39D800E7805E /* Assets.xcassets in Resources */,
+				F43186A327BF500200E7805E /* PostTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,8 +309,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F43186A927BF550200E7805E /* BaseTableViewCell.swift in Sources */,
 				F431868327BF39D300E7805E /* PostViewController.swift in Sources */,
 				F431867F27BF39D300E7805E /* AppDelegate.swift in Sources */,
+				F43186A527BF503300E7805E /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
